@@ -1,4 +1,4 @@
-# server.py - Asynchonous Chat Server
+# server.py - Asynchronous Chat Server
 
 import sys
 sys.dont_write_bytecode = True
