@@ -2,7 +2,6 @@
 
 
 from aiohttp import web
-import importlib
 
 import sys
 sys.dont_write_bytecode = True
