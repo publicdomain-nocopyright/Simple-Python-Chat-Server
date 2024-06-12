@@ -10,7 +10,7 @@ import library.relativePath
 library.header
 
 async def index(request):
-    return web.FileResponse(library.relativePath + "/index.html")
+    return web.FileResponse(library.relativePath + "/library/index.html")
 
 app = web.Application()
 app.add_routes([web.get('/', index)])
