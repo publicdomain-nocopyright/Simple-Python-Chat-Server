@@ -1,12 +1,14 @@
 # server.py - Asynchonous Chat Server
 
+
+from aiohttp import web
+import importlib
+
 import sys
 sys.dont_write_bytecode = True
 
-from aiohttp import web
-
-import library.header 
 import library.relativePath
+import library.header 
 library.header
 
 async def index(request):
