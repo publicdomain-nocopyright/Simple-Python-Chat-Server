@@ -12,6 +12,11 @@ import library.relativePath
 async def index(request):
     return web.FileResponse(library.relativePath + "/library/index.html")
 
+# TODO: return .json file showing all registered routes that are not vulnerable to security
+# INFO: Mostly to list the routes and display on the index page.
+async def information(request):
+    return web.FileResponse(library.relativePath + "/library/posting.html")
+
 async def posting(request):
     return web.FileResponse(library.relativePath + "/library/posting.html")
 

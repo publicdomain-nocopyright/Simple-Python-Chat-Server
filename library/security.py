@@ -1,0 +1,1 @@
+# Captcha, DDOS and other security issues.
