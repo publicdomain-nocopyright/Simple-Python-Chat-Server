@@ -8,9 +8,7 @@ from aiohttp import web
 import library.header 
 import library.relativePath
 library.header
-#print(library.relativePath.getCurrentProjectPath())
-import library.relativePath
-print(library.relativePath)
+
 async def index(request):
     return web.FileResponse(library.relativePath + "/index.html")
 
