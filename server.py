@@ -23,6 +23,15 @@ async def posting(request):
 # TODO: How to do end-to-end encryption?
 # TODO: How to do a decentralized database?
 # TODO: How to make a master server if it's a chat platform?
+# TODO: User Registration: Save user information. 
+# TODO: Make user login form.
+# TODO: Make chat box.
+# TODO: Add DDOS security.
+# TODO: Create a project for crowdfunding.
+# TODO: Add Emojis
+# TODO: Add Images support
+# TODO: Add Attachments server
+# TODO: Add User Settings
 
 async def save_text(request):
     data = await request.post()
