@@ -1,9 +1,9 @@
 # server.py - Asynchonous Chat Server
 
-from aiohttp import web
-
 import sys
 sys.dont_write_bytecode = True
+
+from aiohttp import web
 
 import library.relativePath
 
