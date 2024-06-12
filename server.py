@@ -6,7 +6,6 @@ import importlib
 
 import sys
 sys.dont_write_bytecode = True
-
 import library.relativePath
 import library.header 
 library.header
