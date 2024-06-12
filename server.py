@@ -6,11 +6,11 @@ sys.dont_write_bytecode = True
 from aiohttp import web
 
 import library.header 
-import library.relativePath
+import library.absolutePath
 library.header
 
 async def index(request):
-    return web.FileResponse(library.relativePath + "/index.html")
+    return web.FileResponse(library.absolutePath + "/index.html")
 
 app = web.Application()
 app.add_routes([web.get('/', index)])
