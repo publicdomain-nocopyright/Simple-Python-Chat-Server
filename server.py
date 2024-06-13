@@ -20,6 +20,7 @@ async def information(request):
 async def posting(request):
     return web.FileResponse(library.relativePath + "/response/posting.html")
 
+# TODO: Lightweight HTML parser.
 # TODO: How to make it without redirect to another web page?
 #   TODO: HTTP 204 No Content response.
 #   TODO: - not giving the visual response to the user. 
