@@ -21,6 +21,9 @@ async def posting(request):
     return web.FileResponse(library.relativePath + "/library/posting.html")
 
 # TODO: How to make it without redirect to another web page?
+#   TODO: HTTP 204 No Content response.
+#   TODO: - is not giving the visual response to the user. 
+#   TODO: Generate a new HTML page response.
 # TODO: How to make it with Websockets?
 # TODO: How to make authentication?
 # TODO: How to upload images?
@@ -47,7 +50,13 @@ async def save_text(request):
             await db.execute('CREATE TABLE IF NOT EXISTS texts (id INTEGER PRIMARY KEY, text TEXT)')
             await db.execute('INSERT INTO texts (text) VALUES (?)', (text,))
             await db.commit()
-            return web.Response(text="Text saved successfully")
+            return web.Response(status=204)  # HTTP 204 No Content response
+        
+    # Fetch all texts to display
+    async with aiosqlite.connect('databasefile') as db:
+        async with db.execute('SELECT id, text FROM texts') as cursor:
+            rows = await cursor.fetchall()
+            texts = [dict(id=row[0], text=row[1]) for row in rows]
 
 if __name__ == '__main__':
 
