@@ -22,7 +22,7 @@ async def posting(request):
 
 # TODO: How to make it without redirect to another web page?
 #   TODO: HTTP 204 No Content response.
-#   TODO: - is not giving the visual response to the user. 
+#   TODO: - not giving the visual response to the user. 
 #   TODO: Generate a new HTML page response.
 # TODO: How to make it with Websockets?
 # TODO: How to make authentication?
