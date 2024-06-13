@@ -42,7 +42,7 @@ async def posting(request):
 # TODO: Add User Settings
 
 
-#import response.posting_success
+import response.posting_success
 #response.posting_success.posting_success()
 
 
@@ -55,7 +55,9 @@ async def save_text(request):
             await db.execute('CREATE TABLE IF NOT EXISTS texts (id INTEGER PRIMARY KEY, text TEXT)')
             await db.execute('INSERT INTO texts (text) VALUES (?)', (text,))
             await db.commit()
-            return web.Response(status=204)  # HTTP 204 No Content response
+            modified_html = await response.posting_success.modify_html(library.relativePath + '/response/posting.html')
+            return web.Response(text=modified_html, content_type='text/html')
+            #return web.Response(status=204)  # HTTP 204 No Content response
         
     # Fetch all texts to display
     async with aiosqlite.connect('databasefile') as db:
