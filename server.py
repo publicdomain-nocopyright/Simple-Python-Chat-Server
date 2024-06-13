@@ -10,15 +10,15 @@ import library.relativePath
 
 
 async def index(request):
-    return web.FileResponse(library.relativePath + "/library/index.html")
+    return web.FileResponse(library.relativePath + "/response/index.html")
 
 # TODO: return .json file showing all registered routes that are not vulnerable to security
 # INFO: Mostly to list the routes and display on the index page.
 async def information(request):
-    return web.FileResponse(library.relativePath + "/library/posting.html")
+    return web.FileResponse(library.relativePath + "/response/posting.html")
 
 async def posting(request):
-    return web.FileResponse(library.relativePath + "/library/posting.html")
+    return web.FileResponse(library.relativePath + "/response/posting.html")
 
 # TODO: How to make it without redirect to another web page?
 #   TODO: HTTP 204 No Content response.
