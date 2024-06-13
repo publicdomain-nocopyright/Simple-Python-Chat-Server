@@ -41,6 +41,11 @@ async def posting(request):
 # TODO: Add Attachments server
 # TODO: Add User Settings
 
+
+#import response.posting_success
+#response.posting_success.posting_success()
+
+
 async def save_text(request):
     data = await request.post()
     text = data.get('text')

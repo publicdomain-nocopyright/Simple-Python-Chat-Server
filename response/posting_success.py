@@ -1,8 +1,21 @@
-import xml.etree.ElementTree as et
+import xml.etree.ElementTree as ET
+import aiohttp
 
-def posting_succes(request):
-    pass
-    # return HTML page. 
+async def modify_html():
+    # Load the HTML file
+    tree = ET.parse('posting.html')
+    root = tree.getroot()
+    body = root.find('.//body')
+    if body is not None:
+        success_element = ET.Element('p')
+        success_element.text = 'success'
+        body.append(success_element)
+    return ET.tostring(root, encoding='unicode', method='html')
+
+
+async def posting_success():
+    modified_html = await modify_html()
+    return aiohttp.web.Response(text=modified_html, content_type='text/html')
 
 # <!DOCTYPE html>
 # <html>
