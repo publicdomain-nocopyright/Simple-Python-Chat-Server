@@ -68,6 +68,7 @@ if __name__ == '__main__':
     print(f"Database will be created at: {db_path}")
     print(f"Current working directory: {os.getcwd()}")
 
+    # Serves Web Pages
     app = web.Application()
     app.add_routes([web.get('/', index)])
     app.add_routes([web.get('/posting', posting)])
